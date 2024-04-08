@@ -1,0 +1,73 @@
+@if(payload){
+    <div class="add-container">
+        <form [formGroup]="addEmployeeForm" class="add-wrapper
+    " (ngSubmit)="onSubmit()">
+            <div>Edit Employee Page</div>
+            <div class="name-container">
+                <div>
+                    <label for="firstname">Firstname: </label>
+                    <input formControlName="first_name" [value]="payload.first_name" name="firstname" type="text" />
+                </div>
+                <div>
+                    <label for="lastname">Lastname: </label>
+                    <input formControlName="last_name" value="payload.last_name" name="lastname" type="text" />
+                </div>
+            </div>
+            <div>
+                <label for="email">Email: </label>
+                <input formControlName="email" name="email" value="payload.email" type="text" />
+            </div>
+            <div>
+                <label for="gender">Gender: </label>
+                <input formControlName="gender" name="gender" value="payload.gender" type="text" />
+            </div>
+            <div>
+                <label for="salary">Salary: </label>
+                <input formControlName="salary" name="salary" value="payload.salary" type="number" />
+            </div>
+            @if (validation) {
+            <span style="color: red;">{{this.validation}}</span>
+            }
+            <div>
+                <button class="button" type="submit">Edit Employee</button>
+            </div>
+        </form>
+    </div>
+}
+@else{
+<div class="add-container">
+    <form [formGroup]="addEmployeeForm" class="add-wrapper
+" (ngSubmit)="onSubmit()">
+        <div>Add Employee Page</div>
+        <div class="name-container">
+            <div>
+                <label for="firstname">Firstname: </label>
+                <input formControlName="first_name" name="firstname" type="text" />
+            </div>
+            <div>
+                <label for="lastname">Lastname: </label>
+                <input formControlName="last_name" name="lastname" type="text" />
+            </div>
+        </div>
+        <div>
+            <label for="email">Email: </label>
+            <input formControlName="email" name="email" type="text" />
+        </div>
+        <div>
+            <label for="gender">Gender: </label>
+            <input formControlName="gender" name="gender" type="text" />
+        </div>
+        <div>
+            <label for="salary">Salary: </label>
+            <input formControlName="salary" name="salary" type="number" />
+        </div>
+        @if (validation) {
+        <span style="color: red;">{{this.validation}}</span>
+        }
+        <div>
+            <button class="button" type="submit">Add Employee</button>
+        </div>
+    </form>
+</div>
+
+}

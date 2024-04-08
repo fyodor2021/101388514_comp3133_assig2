@@ -1,0 +1,13 @@
+<div class="page-container">
+    <div>
+        <button class="button" (click)="handleAddEmployeeClick()">Add Employee</button>
+        <button class="button" (click)="handleLogoutClick()">Logout</button>
+    </div>
+
+    @if(employees){
+
+    <div *ngFor="let employee of employees.getAllEmployees">
+        <app-employeeshow [query]="employeesQuery" [data]="employee"></app-employeeshow>
+    </div>
+    }
+</div>

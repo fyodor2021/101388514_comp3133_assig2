@@ -1,0 +1,21 @@
+<div class="login-container">
+    <form [formGroup]="loginForm" class="login-wrapper
+    " (ngSubmit)="onSubmit()">
+    <div>Login Page</div>
+    <div>
+      <label for="username">Username: </label>
+      <input formControlName="email" name="email" type="text" />
+    </div>
+    <div>
+      <label for="password">Password: </label>
+      <input formControlName="password" name="password" type="Password" />
+    </div>
+    @if (validation) {
+      <span style="color: red;">{{this.validation}}</span>
+    }
+    <div>
+      <button class="button" type="submit">Login</button>
+    </div>
+    <div>Or <span style="color: red;" (click)="handleRegisterClick()">Register</span></div>
+  </form>
+</div>

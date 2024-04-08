@@ -1,0 +1,44 @@
+.add-container{
+    width: 50%;
+}
+.add-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.add-wrapper > div{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+
+}
+.add-wrapper > :nth-child(1){
+    font-size: 3rem;
+}
+.name-container{
+    display: flex;
+    flex-direction: row !important;
+}
+.name-container > div > input{
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.25rem;
+}
+.name-container > div{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 2rem;
+}
+
+.add-wrapper >  *:not(:nth-child(2)) {
+    margin: 2rem;
+}
+.add-wrapper > * > input{
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 2rem;
+}
